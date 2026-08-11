@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpiceHub | Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a href="index.html" class="brand">
+            <span class="brand-mark">S</span>
+            <span>SpiceHub</span>
+        </a>
+
+
+        <div class="checkout-progress">
+
+            <span class="done">
+                Cart
+            </span>
+
+            <i>→</i>
+
+            <span class="current">
+                Checkout
+            </span>
+
+            <i>→</i>
+
+            <span>
+                Confirmation
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<main class="simple-page checkout-page">
+
+    <div class="page-title">
+
+        <p class="eyebrow orange">
+            CHECKOUT
+        </p>
+
+        <h1>
+            Complete your order
+        </h1>
+
+        <p>
+            Enter your delivery details and select a payment method.
+        </p>
+
+    </div>
+
+
+    <form id="checkoutForm">
+
+        <div class="checkout-layout">
+
+
+            <section class="checkout-left">
+
+
+                <div class="checkout-card">
+
+                    <div class="card-heading">
+
+                        <span class="number">
+                            1
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Delivery details
+                            </h2>
+
+                            <p>
+                                Where should we deliver your food?
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group full">
+
+                            <label>
+                                Full name
+                            </label>
+
+                            <input
+                                id="customerName"
+                                type="text"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Phone number
+                            </label>
+
+                            <input
+                                id="customerPhone"
+                                type="tel"
+                                placeholder="+91 98765 43210"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                PIN code
+                            </label>
+
+                            <input
+                                id="pincode"
+                                type="text"
+                                placeholder="600001"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>
+                                Delivery address
+                            </label>
+
+                            <textarea
+                                id="address"
+                                rows="4"
+                                placeholder="House number, street, area, landmark..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="checkout-card">
+
+                    <div class="card-heading">
+
+                        <span class="number">
+                            2
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Payment method
+                            </h2>
+
+                            <p>
+                                Choose how you want to pay.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <label class="payment-card">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="UPI"
+                            checked
+                        >
+
+                        <span class="payment-icon">
+                            📱
+                        </span>
+
+                        <span class="payment-text">
+
+                            <strong>
+                                UPI
+                            </strong>
+
+                            <small>
+                                Google Pay, PhonePe, Paytm
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="payment-card">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="Card"
+                        >
+
+                        <span class="payment-icon">
+                            💳
+                        </span>
+
+                        <span class="payment-text">
+
+                            <strong>
+                                Credit / Debit Card
+                            </strong>
+
+                            <small>
+                                Visa, Mastercard, RuPay
+                            </small>
+
+                        </span>
+
+                    </label>
+
+
+                    <label class="payment-card">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="Cash on Delivery"
+                        >
+
+                        <span class="payment-icon">
+                            💵
+                        </span>
+
+                        <span class="payment-text">
+
+                            <strong>
+                                Cash on Delivery
+                            </strong>
+
+                            <small>
+                                Pay when your order arrives
+                            </small>
+
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <aside class="checkout-summary">
+
+                <h2>
+                    Order summary
+                </h2>
+
+
+                <div id="checkoutItems"></div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="bill-line">
+
+                    <span>
+                        Item total
+                    </span>
+
+                    <strong>
+                        ₹<span id="summaryItems">0</span>
+                    </strong>
+
+                </div>
+
+
+                <div class="bill-line">
+
+                    <span>
+                        Delivery fee
+                    </span>
+
+                    <strong>
+                        ₹40
+                    </strong>
+
+                </div>
+
+
+                <div class="bill-line">
+
+                    <span>
+                        Taxes
+                    </span>
+
+                    <strong>
+                        ₹<span id="summaryTax">0</span>
+                    </strong>
+
+                </div>
+
+
+                <div class="bill-divider"></div>
+
+
+                <div class="bill-total">
+
+                    <span>
+                        To pay
+                    </span>
+
+                    <strong>
+                        ₹<span id="summaryTotal">0</span>
+                    </strong>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    type="submit"
+                >
+                    Place order
+                </button>
+
+
+                <p class="secure-note">
+                    🔒 Your information is secure.
+                </p>
+
+            </aside>
+
+        </div>
+
+    </form>
+
+</main>
+
+
+<script src="checkout.js"></script>
+
+</body>
+</html>

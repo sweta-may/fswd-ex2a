@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpiceHub | Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <a href="index.html" class="brand">
+            <span class="brand-mark">S</span>
+            <span>SpiceHub</span>
+        </a>
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#menu">
+                Menu
+            </a>
+
+            <a class="active" href="cart.html">
+                Cart
+                <span class="nav-cart-count" id="navCartCount">
+                    0
+                </span>
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main class="simple-page">
+
+    <div class="breadcrumb">
+
+        <a href="index.html">
+            Restaurant
+        </a>
+
+        <span>›</span>
+
+        <strong>
+            Cart
+        </strong>
+
+    </div>
+
+
+    <div class="page-title">
+
+        <p class="eyebrow orange">
+            YOUR ORDER
+        </p>
+
+        <h1>
+            Your cart
+        </h1>
+
+        <p>
+            Review your items before continuing.
+        </p>
+
+    </div>
+
+
+    <div class="cart-layout">
+
+        <section class="cart-list">
+
+            <div class="cart-restaurant">
+
+                <div class="mini-restaurant-icon">
+                    🍛
+                </div>
+
+                <div>
+
+                    <strong>
+                        Spice Garden
+                    </strong>
+
+                    <span>
+                        30–35 min delivery
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div id="cartItems"></div>
+
+
+            <div class="continue-shopping">
+
+                <a href="index.html#menu">
+                    ← Add more items
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <aside class="bill-card">
+
+            <h2>
+                Bill details
+            </h2>
+
+
+            <div class="bill-line">
+
+                <span>
+                    Item total
+                </span>
+
+                <strong>
+                    ₹<span id="itemTotal">0</span>
+                </strong>
+
+            </div>
+
+
+            <div class="bill-line">
+
+                <span>
+                    Delivery fee
+                </span>
+
+                <strong>
+                    ₹40
+                </strong>
+
+            </div>
+
+
+            <div class="bill-line">
+
+                <span>
+                    Taxes & charges
+                </span>
+
+                <strong>
+                    ₹<span id="tax">0</span>
+                </strong>
+
+            </div>
+
+
+            <div class="bill-divider"></div>
+
+
+            <div class="bill-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    ₹<span id="grandTotal">0</span>
+                </strong>
+
+            </div>
+
+
+            <a
+                href="checkout.html"
+                class="primary-button"
+                id="checkoutLink"
+            >
+                Continue to checkout
+            </a>
+
+        </aside>
+
+    </div>
+
+</main>
+
+
+<script src="cart.js"></script>
+
+</body>
+</html>
